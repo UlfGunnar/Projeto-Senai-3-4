@@ -41,8 +41,8 @@
     - Quais dados do cliente deve ser salvo?
     - Qual é a taxa de cobrança?
     - "Cada serviço deve ter uma cor diferente" especificar o que seria cada serviço (tela?);
-    - Especificar melhor o item "Separar o funcionários por coluna/tela";
-    - Especificar melhor o item "botão de redirecionamento para a data atual"
-    - Especificar melhor o item "                                                                                "
+    - Especificar melhor o item "Separar o funcionários por coluna/tela" o que é isto?;
+    - Especificar melhor o item "botão de redirecionamento para a data atual" aonde estaria este botão;
+    - Especificar melhor o item "";
 
 
