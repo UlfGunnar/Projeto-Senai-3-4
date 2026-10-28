@@ -1,5 +1,5 @@
 ## Requisitos Funcionais:
-    - Agendamento de Clientes:
+    1- Agendamento de Clientes:
         * Pode remover ou adicionar algum serviço;
         * Forma de pagamento pode ser alterada após o agendamento;
         * Deve poder ver todos os agendamentos;
@@ -26,13 +26,11 @@
 
     - Bloqueio de agendamento;
 
-    - Cadastro de Funcionário;
-
-    - Congelamento de Agendamentos;
+    3 - Cadastro de Funcionário;
 
     - Mensagens pré-definidas;
 
-    - Listagens:
+    - Listagens (tropinha): 
         * Lista de espera de clientes, com aviso quando liberar algum espaço.
         * Lista de aniversáriantes;
         * Cobranças;
@@ -51,13 +49,13 @@
             + Seção paga;
             + Seção não paga
 
-    - Cadastro da anamnese:
+    7 - Cadastro da anamnese:
         * Necessário assinatura do cliente;
             
     - Geração de Recibos;
         * Exibir apenas o valor faltante;
 
-    - Cobrança:
+    5 - Cobrança:
         * Funcionário pode remover cobrança;
         * Opção de enviar lembrete via zap;
         * A cobrança é excluída apos ser pagada;
@@ -65,11 +63,13 @@
 
     - O cliente pode adicionar saldo;
 
-    - Cadastro de produtos:
+    4 - Cadastro de produtos:
         
-    - Cadastro de despesas;
+    6 - Cadastro de despesas;
 
-    - Cadastro de serviços:
+    2 - Cadastro de serviços:
+
+    - Login (primeiro func depois cliente);
 
 ## Requisitos não Funcionais:
 
@@ -142,6 +142,8 @@
     - Cadastro de despesa, a categoria pode selecionar entre Custos, administração geral, comercial) ou outro
 
     - Página de redirecionamento para WhatsApp e Instagram;
+
+    - Listagem de agendamento 
 
 ## Perguntas: 
     - Quais dados do cliente deve ser salvo?
