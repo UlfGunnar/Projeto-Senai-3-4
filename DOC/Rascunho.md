@@ -159,3 +159,6 @@
     - Especificar melhor o item "mandar um lembrete quando bater os 30 dias"
     - Especificar melhor o que seria o cabelo no anamnese;
     - Especificar o cálculo deste item "Página que mostra a receita total, despesas e o lucro do salão"
+    - Falta Layout das páginas;
+    - Regras de negócio;
+    - Requisitos não funcionais;
