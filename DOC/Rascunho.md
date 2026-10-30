@@ -120,14 +120,18 @@
         * Saldo; double
 
     - Funcionário:
-        fk_funcionario; int
+        pk_funcionario; int
         cpf; int
         nome; str
         numero; str
         * Data de nascimento; date
 
     - Intervalo dos Funcionários:
-
+        pk_intervalo; int
+        fk_funcionario; int
+        hora_inicio; time
+        hora_fim; time
+        
     - Produtos:
         pk_produto; int
         * Nome Produto; str
