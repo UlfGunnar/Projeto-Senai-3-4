@@ -75,39 +75,39 @@
 
 ## Dados a ser salvo:
     - Agenda:
-        * Data marcada;
-        * Nome do Cliente;
-        * Número do cliente;
-        * Serviço a ser feito;
-        * Forma de pagamento (Crédito, Débito, Pix, Dinheiro, Boleto, Grátis);
-        * Observação;
-        * Status;
-        * Valor (+ taxa de cobrança);
-        * Horário;
+        * Data marcada; date
+        * Nome do Cliente; string
+        * Número do cliente; string
+        * Serviço a ser feito; string
+        * Forma de pagamento (Crédito, Débito, Pix, Dinheiro, Boleto, Grátis); string
+        * Observação; string
+        * Status; string
+        * Valor (+ taxa de cobrança); double
+        * Horário; time
     
     - Cobrança:
-        * Nome do cliente;
-        * Data Início;
-        * Data Fim;
-        * Horário Início;
-        * Horário Fim;
-        * Celular;
-        * Serviço;
-        * Valor a dever;
-        * Observação;
-        * Status;
-        * Total pago;
+        * Nome do cliente; string
+        * Data Início; date
+        * Data Fim; date
+        * Horário Início; time
+        * Horário Fim; time
+        * Celular; string
+        * Serviço; strig
+        * Valor a dever; doble
+        * Observação; string
+        * Status; string
+        * Total pago; double
 
     - Serviço;
-        * Nome do Serviço;
-        * Estimativa de tempo;
+        * Nome do Serviço; string
+        * Estimativa de tempo; time
 
     - Cliente:
-        * Nome do Cliente;
-        * Celular;
-        * cpf;
-        * data nascimento;
-        * Saldo;
+        * Nome do Cliente; str
+        * Celular; str
+        * cpf; str
+        * data nascimento; date
+        * Saldo; double
 
     - Funcionário:
         * Data de nascimento;
