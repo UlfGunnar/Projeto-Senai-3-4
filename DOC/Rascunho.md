@@ -75,17 +75,24 @@
 
 ## Dados a ser salvo:
     - Agenda:
+        pk_agendamento; int
+        fk_cliente; int
         * Data marcada; date
         * Nome do Cliente; string
         * Número do cliente; string
-        * Serviço a ser feito; string
+        * fk_servico; int
+            Serviço a ser feito; string
         * Forma de pagamento (Crédito, Débito, Pix, Dinheiro, Boleto, Grátis); string
         * Observação; string
         * Status; string
         * Valor (+ taxa de cobrança); double
         * Horário; time
-    
-    - Cobrança:
+        * nome funcionario; str
+            fk_funcionario; int
+
+    - Cobrança:0
+        pk_cobranca; int
+        fk_cliente; str
         * Nome do cliente; string
         * Data Início; date
         * Data Fim; date
@@ -99,10 +106,13 @@
         * Total pago; double
 
     - Serviço;
+        pk_servico; int
         * Nome do Serviço; string
         * Estimativa de tempo; time
 
     - Cliente:
+        pk_cliente; int
+        fk_anamnese; int
         * Nome do Cliente; str
         * Celular; str
         * cpf; str
@@ -110,21 +120,29 @@
         * Saldo; double
 
     - Funcionário:
+        fk_funcionario; int
+        cpf; int
+        nome; str
+        numero; str
         * Data de nascimento; date
 
     - Intervalo dos Funcionários:
 
     - Produtos:
+        pk_produto; int
         * Nome Produto; str
         * Preço; double
         * Quantidade; int
 
     - Movimentação de produtos:
+        fk_produto; int
+        pk_movimentacao; int
         * tipo de Movimentação; str 
         * Valor gasto; double
 
     - Despesas;
-        * Vertente (Despesa fixa, despesa regular, despesa parcelada) dtr
+        pk_despesas; int
+        * Vertente (Despesa fixa, despesa regular, despesa parcelada) str
         * Pago? str
         * Nome da despesa; str
         * Valor; double
@@ -133,8 +151,21 @@
         * Data Fim; date
 
     - Anamnses
+        pk_anamnses; int
         * Cabelo; str
         * Risco de saúde; str
+
+## Carnalidades
+
+cliente agenda 1:N
+serviço agenda 1:N
+funcionario agenda 1:N
+cliente cobranca 1:N
+produto movimentacao de produtos 1:N
+funcionario intervalo funcionario 1:N
+cliente anamnese 1:N
+despesas sem relacionamento
+
 
 ## UX/UI
     - Cada serviço deve ter uma cor diferente (customizavel)    
