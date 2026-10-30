@@ -110,31 +110,31 @@
         * Saldo; double
 
     - Funcionário:
-        * Data de nascimento;
+        * Data de nascimento; date
 
     - Intervalo dos Funcionários:
 
     - Produtos:
-        * Nome Produto;
-        * Preço;
-        * Quantidade;
+        * Nome Produto; str
+        * Preço; double
+        * Quantidade; int
 
     - Movimentação de produtos:
-        * tipo de Movimentação;
-        * Valor gasto;
+        * tipo de Movimentação; str 
+        * Valor gasto; double
 
     - Despesas;
-        * Vertente (Despesa fixa, despesa regular, despesa parcelada)
-        * Pago?
-        * Nome da despesa;
-        * Valor;
-        * Categoria.
-        * Data Início;
-        * Data Fim;
+        * Vertente (Despesa fixa, despesa regular, despesa parcelada) dtr
+        * Pago? str
+        * Nome da despesa; str
+        * Valor; double
+        * Categoria; str
+        * Data Início; date
+        * Data Fim; date
 
     - Anamnses
-        * Cabelo;
-        * Risco de saúde;
+        * Cabelo; str
+        * Risco de saúde; str
 
 ## UX/UI
     - Cada serviço deve ter uma cor diferente (customizavel)    
