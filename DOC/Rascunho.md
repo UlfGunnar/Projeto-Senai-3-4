@@ -105,11 +105,13 @@
         * Status; string
         * Total pago; double
 
+-----TABELA CRIADA-----
     - Serviço;
         pk_servico; int
         * Nome do Serviço; string
         * Estimativa de tempo; time
 
+-----TABELA CRIADA-----
     - Cliente:
         pk_cliente; int
         fk_anamnese; int
@@ -117,7 +119,12 @@
         * Celular; str
         * cpf; str
         * data nascimento; date
-        * Saldo; double
+
+-----TABELA CRIADA-----
+    - Credito cliente
+        pk_credito; int
+        fk_cliente; int
+        valor; double
 
     - Funcionário:
         pk_funcionario; int
@@ -131,7 +138,8 @@
         fk_funcionario; int
         hora_inicio; time
         hora_fim; time
-        
+
+-----TABELA CRIADA-----
     - Produtos:
         pk_produto; int
         * Nome Produto; str
@@ -154,8 +162,10 @@
         * Data Início; date
         * Data Fim; date
 
+-----TABELA CRIADA-----
     - Anamnses
         pk_anamnses; int
+        fk_cliente
         * Cabelo; str
         * Risco de saúde; str
 
