@@ -172,12 +172,12 @@
 ## Carnalidades
 
 cliente agenda 1:N
-serviço agenda 1:N
-funcionario agenda 1:N
+serviço agenda 1:N                      // relação muitos para muitos, 1 serviço pode estar em vários agendamento e 1 agendamento pode ter vários serviços
+funcionario agenda 1:N  
 cliente cobranca 1:N
-produto movimentacao de produtos 1:N
-funcionario intervalo funcionario 1:N
-cliente anamnese 1:N
+produto movimentacao de produtos 1:N    // Verificar se vai ser usado está tabela de movimentação de produtos
+funcionario intervalo funcionario 1:N   // Vai ser usadso a tabela "intervalo funcionário" ? eu tinha colocado pensando que ia ter almoço + 15 min de descanso.
+cliente anamnese 1:N                    // Por que 1:N ? imagino que cada cliente vai ter 1 histórico médico.
 despesas sem relacionamento
 
 
