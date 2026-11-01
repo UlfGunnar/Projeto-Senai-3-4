@@ -128,7 +128,7 @@
 
     - Funcionário:
         pk_funcionario; int
-        cpf; int
+        cpf; int                // CPF precisar ser string, se for int, qualquer número que tiver 0 no início será apagado.
         nome; str
         numero; str
         * Data de nascimento; date
@@ -155,7 +155,7 @@
     - Despesas;
         pk_despesas; int
         * Vertente (Despesa fixa, despesa regular, despesa parcelada) str
-        * Pago? str
+        * Pago? str             // seria melhor boolean, no próprio texto do Igor ele recomenda este tipo
         * Nome da despesa; str
         * Valor; double
         * Categoria; str
@@ -165,7 +165,7 @@
 -----TABELA CRIADA-----
     - Anamnses
         pk_anamnses; int
-        fk_cliente
+        fk_cliente          //falta o tipo deste cara 
         * Cabelo; str
         * Risco de saúde; str
 
