@@ -80,8 +80,7 @@
         * Data marcada; date
         * Nome do Cliente; string
         * Número do cliente; string
-        * fk_servico; int
-            Serviço a ser feito; string
+        Serviço a ser feito; string
         * Forma de pagamento (Crédito, Débito, Pix, Dinheiro, Boleto, Grátis); string
         * Observação; string
         * Status; string
@@ -92,7 +91,7 @@
 
     - Cobrança:0
         pk_cobranca; int
-        fk_cliente; str
+        fk_cliente; int
         * Nome do cliente; string
         * Data Início; date
         * Data Fim; date
@@ -114,7 +113,6 @@
 -----TABELA CRIADA-----
     - Cliente:
         pk_cliente; int
-        fk_anamnese; int
         * Nome do Cliente; str
         * Celular; str
         * cpf; str
@@ -128,16 +126,10 @@
 
     - Funcionário:
         pk_funcionario; int
-        cpf; int                // CPF precisar ser string, se for int, qualquer número que tiver 0 no início será apagado.
+        cpf; str               
         nome; str
         numero; str
         * Data de nascimento; date
-
-    - Intervalo dos Funcionários:
-        pk_intervalo; int
-        fk_funcionario; int
-        hora_inicio; time
-        hora_fim; time
 
 -----TABELA CRIADA-----
     - Produtos:
@@ -155,7 +147,7 @@
     - Despesas;
         pk_despesas; int
         * Vertente (Despesa fixa, despesa regular, despesa parcelada) str
-        * Pago? str             // seria melhor boolean, no próprio texto do Igor ele recomenda este tipo
+        * Pago?; boolean             
         * Nome da despesa; str
         * Valor; double
         * Categoria; str
@@ -165,26 +157,48 @@
 -----TABELA CRIADA-----
     - Anamnses
         pk_anamnses; int
-        fk_cliente          //falta o tipo deste cara 
+        fk_cliente; unique  
         * Cabelo; str
         * Risco de saúde; str
 
-## Carnalidades
+
+    - Tabela associativa 
+        servico_agenda
+            pk_aservico_agenda; int
+            fk_agendamento; int
+            fk_servico; int
+
+    - Tabela associativa 
+            produtos_despesas
+                pK_produtos_despesas; int
+                fk_produto; int
+                fk_despesas; int
+                quatidade; int
+                valor; double
+            
+
+## Cardinalidade
 
 cliente agenda 1:N
-serviço agenda 1:N                      // relação muitos para muitos, 1 serviço pode estar em vários agendamento e 1 agendamento pode ter vários serviços
+
+agenda serviço N:N                       // Verificar se esta correto
+servico  servico_agenda 1:N
+agenda  servico_agenda 1:N
+
 funcionario agenda 1:N  
 cliente cobranca 1:N
-produto movimentacao de produtos 1:N    // Verificar se vai ser usado está tabela de movimentação de produtos
-funcionario intervalo funcionario 1:N   // Vai ser usadso a tabela "intervalo funcionário" ? eu tinha colocado pensando que ia ter almoço + 15 min de descanso.
-cliente anamnese 1:N                    // Por que 1:N ? imagino que cada cliente vai ter 1 histórico médico.
-despesas sem relacionamento
+produto movimentacao de produtos 1:N    
+cliente anamnese 1:1      
+
+despesas produtos N:N                   // Verificar se esta correto
+despesas produtos_despesas 1:N
+produtos produtos_despesas 1:N
 
 
 ## UX/UI
     - Cada serviço deve ter uma cor diferente (customizavel)    
 
-    - Cadastro de despesa, a categoria pode selecionar entre Custos, administração geral, comercial) ou outro
+    - Cadastro de despesa, a categoria pode selecionar entre Custos, administração geral, comercial ou outro
 
     - Página de redirecionamento para WhatsApp e Instagram;
 
@@ -210,3 +224,10 @@ despesas sem relacionamento
     * Falta Layout das páginas; 
     * Regras de negócio;
     * Requisitos não funcionais;
+
+
+## Pendências 
+
+Pedro:
+
+    - 
