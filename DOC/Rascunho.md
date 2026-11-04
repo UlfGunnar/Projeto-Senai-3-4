@@ -74,6 +74,8 @@
 ## Requisitos não Funcionais:
 
 ## Dados a ser salvo:
+
+-----TABELA CRIADA-----
     - Agenda:
         pk_agendamento; int
         fk_cliente; int
@@ -89,6 +91,7 @@
         * nome funcionario; str
             fk_funcionario; int
 
+-----TABELA CRIADA-----
     - Cobrança:0
         pk_cobranca; int
         fk_cliente; int
@@ -124,6 +127,7 @@
         fk_cliente; int
         valor; double
 
+-----TABELA CRIADA-----
     - Funcionário:
         pk_funcionario; int
         cpf; str               
@@ -138,12 +142,14 @@
         * Preço; double
         * Quantidade; int
 
+-----TABELA CRIADA-----
     - Movimentação de produtos:
         fk_produto; int
         pk_movimentacao; int
         * tipo de Movimentação; str 
         * Valor gasto; double
 
+-----TABELA CRIADA-----
     - Despesas;
         pk_despesas; int
         * Vertente (Despesa fixa, despesa regular, despesa parcelada) str
@@ -161,19 +167,21 @@
         * Cabelo; str
         * Risco de saúde; str
 
-
+-----TABELA CRIADA-----
     - Tabela associativa 
         servico_agenda
             pk_servico_agenda; int
             fk_agendamento; int
-                ; int
+            fk_servico; int
 
+-----TABELA CRIADA-----
     - Tabela associativa 
             produtos_despesas
                 pK_produtos_despesas; int
                 fk_produto; int
                 fk_despesas; int
-                
+
+-----TABELA CRIADA-----
     - tabela associativa 
             funcionario_agenda
                 pk_funcionario_agenda: int
