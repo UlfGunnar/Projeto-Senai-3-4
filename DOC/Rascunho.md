@@ -164,17 +164,21 @@
 
     - Tabela associativa 
         servico_agenda
-            pk_aservico_agenda; int
+            pk_servico_agenda; int
             fk_agendamento; int
-            fk_servico; int
+                ; int
 
     - Tabela associativa 
             produtos_despesas
                 pK_produtos_despesas; int
                 fk_produto; int
                 fk_despesas; int
-                quatidade; int
-                valor; double
+                
+    - tabela associativa 
+            funcionario_agenda
+                pk_funcionario_agenda: int
+                fk_funcionario: int
+                pk_agendamento: int
             
 
 ## Cardinalidade
