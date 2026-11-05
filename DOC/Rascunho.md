@@ -85,7 +85,7 @@
         Serviço a ser feito; string
         * Forma de pagamento (Crédito, Débito, Pix, Dinheiro, Boleto, Grátis); string
         * Observação; string
-        * Status; string
+        * Status ('Agendado', 'Confirmado', 'Em Andamento', 'Concluido', 'Cancelado', 'Faltou'); string
         * Valor (+ taxa de cobrança); double
         * Horário; time
         * nome funcionario; str
@@ -104,7 +104,7 @@
         * Serviço; strig
         * Valor a dever; doble
         * Observação; string
-        * Status; string
+        * Status ('Pendente', 'Parcial', 'Pago', 'Vencido','Cancelado'); string
         * Total pago; double
 
 -----TABELA CRIADA-----
