@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS agendamento (
     fk_servico INT,
     pagamento ENUM('Credito', 'Debito', 'Pix', 'Dinheiro', 'Boleto', 'Gratis') NOT NULL,
     observacao VARCHAR(150),
-    status VARCHAR(50),       // VERIFICAR SE TEM COMO COLOCAR "ENUM".
+    status ENUM('Agendado', 'Confirmado', 'Em Andamento', 'Concluido', 'Cancelado', 'Faltou') NOT NULL DEFAULT 'Agendado'
     hora_marcada TIME,
     fk_funcionario INT,
     valor_tx_cobraca DECIMAL(10,2),
@@ -84,7 +84,6 @@ CREATE TABLE IF NOT EXISTS agendamento (
 )
 DEFAULT CHARSET = utf8;
 
-// VERIFICAR DADOS DESTA TABELA JUNTAMENTE AO GRUPO PARA TIRAR DUVIDAS, COMPARAR COM Rascunho.md
 CREATE TABLE IF NOT EXISTS cobranca (
 	pk_cobranca INT AUTO_INCREMENT PRIMARY KEY,
     fk_cliente INT,
@@ -94,14 +93,13 @@ CREATE TABLE IF NOT EXISTS cobranca (
     hora_fim TIME,
     saldo_devedor DECIMAL(10,2),
     observacao VARCHAR(150),
-    status VARCHAR(50),                     // VERIFICAR SE TEM COMO COLOCAR "ENUM".
+    status ENUM('Pendente', 'Parcial', 'Pago', 'Vencido','Cancelado') NOT NULL DEFAULT 'Pendente'
     total_pago DECIMAL(10,2),
     
     FOREIGN KEY (fk_cliente) REFERENCES cliente (pk_cliente)
 )
 DEFAULT CHARSET = utf8;
 
-// VERIFICAR DADOS DESTA TABELA JUNTAMENTE AO GRUPO PARA TIRAR DUVIDAS, COMPARAR COM Rascunho.md
 CREATE TABLE IF NOT EXISTS despesa (
 	pk_despesa INT AUTO_INCREMENT PRIMARY KEY,
     tipo_despesa ENUM('DF', 'DR', 'DP') NOT NULL,
