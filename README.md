@@ -7,7 +7,7 @@ Integrantes:
 
     - Lucas Batista (LucasBatistaSB): Frontend;
 
-    - Pedro Lucas (pedrolucasrodri): DataBase e DAO;
+    - Peido Lucas (pedrolucasrodri): DataBase e DAO;
 
     - Ulf Gunanr (UlfGunnar): Documentação, Testes e2e e Testes Unitários;
 
