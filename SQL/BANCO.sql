@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS movimentacao_produto (
 	pk_movimentacao INT AUTO_INCREMENT PRIMARY KEY,
     fk_produto INT,
     tipo_movimentacao ENUM('E', 'S') NOT NULL,
-    valor_gasto DECIMAL(10,2), 
+    valor_gasto DECIMAL(10,2),  
     
     FOREIGN KEY (fk_produto) REFERENCES produtos (pk_produto)
 )
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS agendamento (
     fk_servico INT,
     pagamento ENUM('Credito', 'Debito', 'Pix', 'Dinheiro', 'Boleto', 'Gratis') NOT NULL,
     observacao VARCHAR(150),
-    status ENUM('Agendado', 'Confirmado', 'Em Andamento', 'Concluido', 'Cancelado', 'Faltou') NOT NULL DEFAULT 'Agendado'
+    status ENUM('Agendado', 'Confirmado', 'Em Andamento', 'Concluido', 'Cancelado', 'Faltou') NOT NULL DEFAULT 'Agendado',
     hora_marcada TIME,
     fk_funcionario INT,
     valor_tx_cobraca DECIMAL(10,2),
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS cobranca (
     hora_fim TIME,
     saldo_devedor DECIMAL(10,2),
     observacao VARCHAR(150),
-    status ENUM('Pendente', 'Parcial', 'Pago', 'Vencido','Cancelado') NOT NULL DEFAULT 'Pendente'
+    status ENUM('Pendente', 'Parcial', 'Pago', 'Vencido','Cancelado') NOT NULL DEFAULT 'Pendente',
     total_pago DECIMAL(10,2),
     
     FOREIGN KEY (fk_cliente) REFERENCES cliente (pk_cliente)
