@@ -1,9 +1,3 @@
-CREATE DATABASE IF NOT EXISTS salaoju
-CHARACTER SET utf8mb4
-COLLATE utf8mb4_unicode_ci;
-
-USE salaoju;
-
 CREATE TABLE IF NOT EXISTS anamnese (
 	pk_anamnese INT AUTO_INCREMENT PRIMARY KEY,
     fk_cliente INT NOT NULL,
