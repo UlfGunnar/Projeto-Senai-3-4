@@ -79,8 +79,6 @@
     - Agenda:
         pk_agendamento; int
         fk_cliente; int
-        fk_funcionario; int
-        fk_serviço; int            // antes tinha o nome do cliente, o que não faz sentido já que temos uma tabela que armazena isto. Verificar se como está no BANCO.sql
         * Data marcada; date
         * Forma de pagamento (Crédito, Débito, Pix, Dinheiro, Boleto, Grátis); string
         * Observação; string
@@ -92,11 +90,11 @@
     - Cobrança:0
         pk_cobranca; int
         fk_cliente; int
+        fk_serviço; int            // antes tinha o nome do serviço, o que não faz sentido já que temos uma tabela que armazena isto. Ver se faz sentido relacionar está tabela com a de serviço, se não retira esta fk
         * Data Início; date
         * Data Fim; date
         * Horário Início; time
         * Horário Fim; time
-        * Serviço; strig
         * Valor a dever; doble
         * Observação; string
         * Status ('Pendente', 'Parcial', 'Pago', 'Vencido','Cancelado'); string
@@ -142,7 +140,7 @@
         fk_produto; int
         pk_movimentacao; int
         * tipo de Movimentação; str 
-        * Valor gasto; double
+        * Valor gasto; double           // de onde vem este valor? como é feito o calculo? 
 
 -----TABELA CRIADA-----
     - Despesas;
