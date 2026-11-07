@@ -79,28 +79,23 @@
     - Agenda:
         pk_agendamento; int
         fk_cliente; int
+        fk_funcionario; int
+        fk_serviço; int            // antes tinha o nome do cliente, o que não faz sentido já que temos uma tabela que armazena isto. Verificar se como está no BANCO.sql
         * Data marcada; date
-        * Nome do Cliente; string
-        * Número do cliente; string
-        Serviço a ser feito; string
         * Forma de pagamento (Crédito, Débito, Pix, Dinheiro, Boleto, Grátis); string
         * Observação; string
         * Status ('Agendado', 'Confirmado', 'Em Andamento', 'Concluido', 'Cancelado', 'Faltou'); string
         * Valor (+ taxa de cobrança); double
         * Horário; time
-        * nome funcionario; str
-            fk_funcionario; int
-
+            
 -----TABELA CRIADA-----
     - Cobrança:0
         pk_cobranca; int
         fk_cliente; int
-        * Nome do cliente; string
         * Data Início; date
         * Data Fim; date
         * Horário Início; time
         * Horário Fim; time
-        * Celular; string
         * Serviço; strig
         * Valor a dever; doble
         * Observação; string
