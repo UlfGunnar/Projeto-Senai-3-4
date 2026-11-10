@@ -90,7 +90,7 @@
     - Cobrança:0
         pk_cobranca; int
         fk_cliente; int
-        fk_serviço; int            // antes tinha o nome do serviço, o que não faz sentido já que temos uma tabela que armazena isto. Ver se faz sentido relacionar está tabela com a de serviço, se não retira esta fk
+        fk_serviço; int            // antes tinha o nome do serviço, o que não faz sentido já que temos uma tabela que armazena isto Ver se faz sentido relacionar está tabela com a de serviço, se não retira esta fk
         * Data Início; date
         * Data Fim; date
         * Horário Início; time
@@ -186,7 +186,7 @@
 
 cliente agenda 1:N
 
-agenda serviço N:N                       // Verificar se esta correto
+agenda serviço N:N                      
 servico  servico_agenda 1:N
 agenda  servico_agenda 1:N
 
@@ -195,7 +195,7 @@ cliente cobranca 1:N
 produto movimentacao de produtos 1:N    
 cliente anamnese 1:1      
 
-despesas produtos N:N                   // Verificar se esta correto
+despesas produtos N:N                   
 despesas produtos_despesas 1:N
 produtos produtos_despesas 1:N
 
