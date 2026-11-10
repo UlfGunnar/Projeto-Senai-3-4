@@ -1,3 +1,9 @@
+CREATE DATABASE IF NOT EXISTS salaoju
+default character set utf8
+default collate utf8_general_ci;
+
+USE salaoju;
+
 CREATE TABLE IF NOT EXISTS anamnese (
 	pk_anamnese INT AUTO_INCREMENT PRIMARY KEY,
     fk_cliente INT NOT NULL,
@@ -16,7 +22,7 @@ CREATE TABLE IF NOT EXISTS cliente (
     
     FOREIGN KEY (fk_anamnese) REFERENCES anamnese(pk_anamnese )
 )
-DEFAULT CHARSET = utf8;
+DEFAULT CHARSET = utf8;			
 
 CREATE TABLE IF NOT EXISTS credito_cliente (
 	pk_credito  INT AUTO_INCREMENT PRIMARY KEY,
@@ -81,6 +87,7 @@ DEFAULT CHARSET = utf8;
 CREATE TABLE IF NOT EXISTS cobranca (
 	pk_cobranca INT AUTO_INCREMENT PRIMARY KEY,
     fk_cliente INT,
+    fk_servico INT,
     data_inicio DATE,
     data_fim DATE,
     hora_inicio TIME,
@@ -90,7 +97,8 @@ CREATE TABLE IF NOT EXISTS cobranca (
     status ENUM('Pendente', 'Parcial', 'Pago', 'Vencido','Cancelado') NOT NULL DEFAULT 'Pendente',
     total_pago DECIMAL(10,2),
     
-    FOREIGN KEY (fk_cliente) REFERENCES cliente (pk_cliente)
+    FOREIGN KEY (fk_cliente) REFERENCES cliente (pk_cliente),
+    FOREIGN KEY (fk_servico) REFERENCES servico (pk_servico)
 )
 DEFAULT CHARSET = utf8;
 
