@@ -90,7 +90,7 @@
     - Cobrança:0
         pk_cobranca; int
         fk_cliente; int
-        fk_serviço; int            // antes tinha o nome do serviço, o que não faz sentido já que temos uma tabela que armazena isto Ver se faz sentido relacionar está tabela com a de serviço, se não retira esta fk
+        fk_serviço; int            
         * Data Início; date
         * Data Fim; date
         * Horário Início; time
@@ -140,7 +140,7 @@
         fk_produto; int
         pk_movimentacao; int
         * tipo de Movimentação; str 
-        * Valor gasto; double           // de onde vem este valor? como é feito o calculo? 
+        * Valor gasto; double          
 
 -----TABELA CRIADA-----
     - Despesas;
