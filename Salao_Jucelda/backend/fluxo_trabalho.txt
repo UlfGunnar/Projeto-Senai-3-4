@@ -1,0 +1,25 @@
+- Create:
+
+    1 - Coletar os dados do FrontEnd (Lucas);
+
+    2 - Aplicar o tratamento de dados em cada atributo;
+
+    3 - Criar o Objeto para o DAO (Pedro).
+
+- Read:
+
+    1 - Coletar os dados do DAO;
+
+    2 - Tratar os dados, (Concatenar, calcular campos derivados, etc...);
+
+    3- Enviar para o FrontEnd (Lucas)
+
+- Update:
+
+    Os mesmos passos que o Create, só que no objeto deve conter a pk do objeto a ser atualizado.
+
+- Delete
+
+    Enviar a PK para o DAO.
+
+    
