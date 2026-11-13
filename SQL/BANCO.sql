@@ -36,7 +36,8 @@ DEFAULT CHARSET = utf8;
 CREATE TABLE IF NOT EXISTS servico (
 		pk_servico  INT AUTO_INCREMENT PRIMARY KEY,
         nome_servico VARCHAR(80) NOT NULL, 
-        tempo TIME NOT NULL
+        tempo TIME NOT NULL,
+        valor_servico DECIMAL(10,2) NOT NULL
 ) 
 DEFAULT CHARSET = utf8;
 
@@ -62,10 +63,11 @@ CREATE TABLE IF NOT EXISTS funcionario (
 	pk_funcionario INT AUTO_INCREMENT PRIMARY KEY,
     cpf_funcionario CHAR(11) NOT NULL,
     numero_celular CHAR(11),
+    nome_funcionario VARCHAR(150) NOT NULL,
     data_nascimento DATE
 )
 DEFAULT CHARSET = utf8;
-
+-- ULF MUDAR MODELAGEM
 CREATE TABLE IF NOT EXISTS agendamento (
 	pk_agendamento INT AUTO_INCREMENT PRIMARY KEY,
     data_marcada DATE NOT NULL,
@@ -76,7 +78,6 @@ CREATE TABLE IF NOT EXISTS agendamento (
     status ENUM('Agendado', 'Confirmado', 'Em Andamento', 'Concluido', 'Cancelado', 'Faltou') NOT NULL DEFAULT 'Agendado',
     hora_marcada TIME,
     fk_funcionario INT,
-    valor_tx_cobraca DECIMAL(10,2),
     
     FOREIGN KEY (fk_cliente) REFERENCES cliente (pk_cliente),
     FOREIGN KEY (fk_servico) REFERENCES servico (pk_servico),
@@ -122,7 +123,7 @@ CREATE TABLE IF NOT EXISTS servico_agendamento (
     fk_agendamento INT,
     fk_servico INT,
     
-    FOREIGN KEY (fk_agendamento) REFERENCES agendamento (pk_agendamento),
+    FOREIGN KEY (fk_agendamento) REFERENCES agendamento (pk_agendamento) ON DELETE CASCADE,
 	FOREIGN KEY (fk_servico) REFERENCES servico (pk_servico)
 )
 DEFAULT CHARSET = utf8;

@@ -235,4 +235,7 @@ produtos produtos_despesas 1:N
 
 Pedro:
 
-    - 
+    - Desenvolver Dao (PDO)
+
+Ulf :
+    - Mudar modelagem
