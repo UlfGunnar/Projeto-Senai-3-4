@@ -27,5 +27,8 @@ $stmt->execute();
 
 $agendamentos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+/*
+top 
+/*
 
 ?>
