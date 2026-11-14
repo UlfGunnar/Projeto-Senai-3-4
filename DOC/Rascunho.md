@@ -17,7 +17,7 @@
             + Pode ser ocultado;
         * Página que mostra a receita total, despesas e o lucro do salão;
         * Quantia de clientes atendidos;
-        * Fluxo de caixa (anual e diário), contendo quando entrou (separado por meio de pagamento) com um gráfico exibindo estes valores e a porcentagem de cada serviço/
+        * Fluxo de caixa (anual e diário), contendo quando entrou (separado por meio de pagamento) com um gráfico exibindo estes valores (gráfico em barras) e a porcentagem de cada serviço (gráfico em pizza)/ 
         * Lista de nome dos clientes e o valores que ele gastou, do maior para o menor;
 
     - Mensagens automatizadas no WhatsApp:

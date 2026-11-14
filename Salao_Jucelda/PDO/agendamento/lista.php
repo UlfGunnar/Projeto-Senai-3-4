@@ -26,8 +26,3 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 $agendamentos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-/*
-/*
-
-?>
