@@ -27,5 +27,8 @@ $stmt->execute([
     $_POST['pk_agendamento']
 ]);
 
+/*
+teste
+/*
 
 ?>
