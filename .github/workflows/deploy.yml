@@ -23,3 +23,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./Salao_Jucelda/
           server-dir: public_html/
+          dangerous-clean-slate: true
