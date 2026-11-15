@@ -6,7 +6,7 @@ export default function KpiReceitabruta() {
         </p>
     </div>
     <p className="mt-2 text-3x1 font-bold text-green-600">
-        R$ 600,00
+        R$ 23.500,00
     </p>
   </div>;
 }

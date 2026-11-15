@@ -6,7 +6,7 @@ export default function KpiLucro() {
         </p>
     </div>
     <p className="mt-2 text-3x1 font-bold text-green-600">
-        R$ 400,00
+        R$ 23.100,00
     </p>
   </div>;
 }

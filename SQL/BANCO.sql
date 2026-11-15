@@ -14,7 +14,7 @@ DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS cliente (
 	pk_cliente INT AUTO_INCREMENT PRIMARY KEY,
-    fk_anamnese INT NOT NULL,
+    fk_anamnese INT, -- Tirei o NOT NULL, nem todo cliente teria algum problema capilar
     nome_cliente VARCHAR(150) NOT NULL,
     celular_cliente CHAR(11),
     cpf CHAR(11),

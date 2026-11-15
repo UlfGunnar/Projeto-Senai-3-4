@@ -1,0 +1,6 @@
+Select
+	Sum(s.valor_servico) as Total_receber
+From servico_agendamento as sa
+Inner Join servico as s on sa.fk_servico = pk_servico
+Inner Join agendamento as a on sa.fk_agendamento = a.pk_agendamento
+Where a.status = "Agendado";

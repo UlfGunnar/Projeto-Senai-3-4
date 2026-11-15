@@ -54,6 +54,8 @@ const dados = [
 export default function GraficoDoisEixos() {
   return (
     <div className="h-72 w-full rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+      <h2>Gráfico de cliente atendidos por mês</h2>
+      
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={dados}>
           <CartesianGrid strokeDasharray="3 3" />
