@@ -21,6 +21,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./Salao_Jucelda/
+          server-dir: public_html/github_teste/
           server-dir: public_html/
           dangerous-clean-slate: true
