@@ -22,5 +22,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: public_html/github_teste/
-          server-dir: public_html/
           dangerous-clean-slate: true
