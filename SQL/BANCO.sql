@@ -67,7 +67,6 @@ CREATE TABLE IF NOT EXISTS funcionario (
     data_nascimento DATE
 )
 DEFAULT CHARSET = utf8;
--- ULF MUDAR MODELAGEM
 CREATE TABLE IF NOT EXISTS agendamento (
 	pk_agendamento INT AUTO_INCREMENT PRIMARY KEY,
     data_marcada DATE NOT NULL,
