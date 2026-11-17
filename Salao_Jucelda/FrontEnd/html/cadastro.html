@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cadastro | Sistema de Gestão do Salão</title>
+</head>
+<body>
+	<header>
+		<h1>Sistema de Gestão do Salão</h1>
+		<nav aria-label="Navegação principal">
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="cadastro.html">Cadastro</a></li>
+				<li><a href="listagem.html">Listagem de Agendamentos</a></li>
+				<li><a href="agendamento.html">Criar Agendamento</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h2>Cadastro de usuário</h2>
+		<form>
+			<div>
+				<label for="nome-completo">Nome completo</label>
+				<input type="text" id="nome-completo" name="nome-completo" autocomplete="name">
+			</div>
+			<div>
+				<label for="email">E-mail</label>
+				<input type="email" id="email" name="email" autocomplete="email">
+			</div>
+			<div>
+				<label for="senha">Senha</label>
+				<input type="password" id="senha" name="senha" autocomplete="new-password">
+			</div>
+			<div>
+				<label for="confirmacao-senha">Confirmação de senha</label>
+				<input type="password" id="confirmacao-senha" name="confirmacao-senha" autocomplete="new-password">
+			</div>
+			<button type="submit">Realizar cadastro</button>
+		</form>
+	</main>
+</body>
+</html>
