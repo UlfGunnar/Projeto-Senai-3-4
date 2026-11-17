@@ -32,5 +32,4 @@ $stmt->execute([
     $_POST['hora_marcada'],
     $_POST['fk_funcionario']
 ]);
-/*coment*dsdddddsdfssdadasdasfdassdfsddfasf/
 ?>
