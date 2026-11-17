@@ -17,11 +17,10 @@ jobs:
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USER }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./Salao_Jucelda/
-        server-dir: public_html/
-        dangerous-clean-slate: true
-        exclude: ""
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./Salao_Jucelda/
+          server-dir: public_html/
+          dangerous-clean-slate: true
