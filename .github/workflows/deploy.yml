@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'Salao_Jucelda/**'
 
 jobs:
   deploy:
@@ -22,5 +20,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./Salao_Jucelda/
-          server-dir: public_html/github_teste/
-          dangerous-clean-slate: true
+          server-dir: domains/pedrolucasrodrigues.com.br/public_html/
