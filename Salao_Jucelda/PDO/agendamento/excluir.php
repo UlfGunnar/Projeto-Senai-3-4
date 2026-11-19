@@ -1,14 +1,14 @@
 <?php
 
-require_once '../backend/conexao.php';
+require_once '../API/conexao.php';
 
-$sql = "DELETE FROM agendamento 
-        WHERE pk_agendamento = ?";
+function excluirDAO(PDO $pdo, int $pk_agendamento): bool
+{
+    $sql = "DELETE FROM agendamento WHERE pk_agendamento = ?";
 
-$stmt = $pdo->prepare($sql);
+    $stmt = $pdo->prepare($sql);
 
-$stmt->execute([
-    $_POST['pk_agendamento']
-]);
+    return $stmt->execute([$pk_agendamento]);
+}
 
 ?>

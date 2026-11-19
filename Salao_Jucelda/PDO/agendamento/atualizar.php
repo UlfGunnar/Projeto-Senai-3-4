@@ -1,8 +1,10 @@
 <?php
 
-require_once '../backend/conexao.php';
+require_once '../API/conexao.php';
 
-$sql = "UPDATE agendamento
+function atualizarDAO(PDO $pdo, array $dados): bool
+{
+    $sql = "UPDATE agendamento
             SET
                 data_marcada = ?,
                 fk_cliente = ?,
@@ -11,29 +13,20 @@ $sql = "UPDATE agendamento
                 observacao = ?,
                 hora_marcada = ?,
                 fk_funcionario = ?
-            WHERE 
-                pk_agendamento = ?";
+            WHERE pk_agendamento = ?";
 
-$stmt = $pdo->prepare($sql);
+    $stmt = $pdo->prepare($sql);
 
-$stmt->execute([
-    $_POST['data_marcada'],
-    $_POST['fk_cliente'],
-    $_POST['fk_servico'],
-    $_POST['pagamento'],
-    $_POST['observacao'],
-    $_POST['hora_marcada'],
-    $_POST['fk_funcionario'],
-    $_POST['pk_agendamento']
-]);
-
-/*
-teste
-
-segundooooo teste
-
-teste definitivo
-
-/*
+    return $stmt->execute([
+        $dados['data_marcada'],
+        $dados['fk_cliente'],
+        $dados['fk_servico'],
+        $dados['pagamento'],
+        $dados['observacao'],
+        $dados['hora_marcada'],
+        $dados['fk_funcionario'],
+        $dados['pk_agendamento']
+    ]);
+}
 
 ?>
