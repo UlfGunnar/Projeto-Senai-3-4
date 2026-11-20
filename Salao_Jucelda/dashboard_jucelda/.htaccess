@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /dashboard_jucelda/
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /dashboard_jucelda/index.html [L]
