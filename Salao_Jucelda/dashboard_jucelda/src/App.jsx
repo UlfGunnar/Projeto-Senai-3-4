@@ -5,17 +5,6 @@ import KPI_lucro  from "./components/KPI_lucro";
 import Grafico_linha from "./components/Linha_clientes_atendidos"
 import Grafico_barra from "./components/Barra_pagamento"
 import Grafico_pizza from "./components/Pizza_Servico"
-// import { useAPI } from "./useAPI"
-
-/*
-export default function App() {
-  const {
-          dados: kpis,
-          erro,
-          carregando
-        } = useAPI("../../API/servicos.php")
-}
-*/
 
 export default function App() {
   return <div>

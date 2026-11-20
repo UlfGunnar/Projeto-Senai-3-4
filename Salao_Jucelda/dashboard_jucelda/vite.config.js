@@ -4,5 +4,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/dashboaard_jucelda/'
+  base: '/dashboard_jucelda/',
+  server: {
+    proxy: {
+      '/Salao_Jucelda/API': {
+        target: 'https://pedrolucasrodrigues.com.br',
+        changeOrigin: true
+      }
+    }
+  }
 }); 
