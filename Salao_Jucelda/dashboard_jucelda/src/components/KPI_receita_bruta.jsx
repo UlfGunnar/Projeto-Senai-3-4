@@ -5,7 +5,7 @@ export default function KpiReceitabruta({valor = 0}) {
             Receita Bruta
         </p>
     </div>
-    <p className="mt-2 text-3x1 font-bold text-green-600">
+    <p className="mt-2 text-2xl font-bold text-green-600">
         ${valor}
     </p>
   </div>;

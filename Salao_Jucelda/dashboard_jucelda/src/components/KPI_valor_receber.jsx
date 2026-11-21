@@ -18,7 +18,7 @@ export default function KpiValorReceber({valor = 0}) {
         </button> {/* este botão inverte o sinal */}
     </div>
 
-    <p className="mt-2 text-3xl font-bold text-green-600">
+    <p className="mt-2 text-2xl font-bold text-green-600">
         {visivel 
         ? valor.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})
         :  "R$ ••••"
