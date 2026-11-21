@@ -4,12 +4,12 @@ import { useApi } from "./../useAPI"
 const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
 function rotuloMes(anoMes) {
-  const [ano, mes] = anoMes.split("-"); //separa o ano e mes pelo "-"
+  const [ano, mes] = anoMes.split("/"); //separa o ano e mes pelo "/"
   return `${meses[Number(mes) - 1]}/${ano.slice(2)}`; //conver o mês númerico para o descritivo
 }
 
 export default function GraficoDoisEixos() {
-  const {dados, erro, carregando} = useApi("Cliente_atendidos.php");
+  const {dados, erro, carregando} = useApi("Clientes_atendidos.php");
 
   if (carregando) return <p>Carregando...</p>;
   if (erro) return <p>Erro: {erro}</p>;
@@ -23,7 +23,7 @@ export default function GraficoDoisEixos() {
         <LineChart data={dados}>
           <CartesianGrid strokeDasharray="3 3" />
           {/* Eixo X */}
-          <XAxis dataKey="mes" tickFormatter={rotuloMes} stroke="#747474" tick= {
+          <XAxis dataKey="ano_mes" tickFormatter={rotuloMes} stroke="#747474" tick= {
             {
               fill: "#747474",
               fontSize: 12
@@ -38,7 +38,7 @@ export default function GraficoDoisEixos() {
 
           <Line
             type="monotone"
-            dataKey="quantidade_clientes"
+            dataKey="total_clientes"
             name="Clientes atendidos"
             stroke="#13c749"
             strokeWidth={2}
