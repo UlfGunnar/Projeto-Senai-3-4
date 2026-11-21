@@ -12,7 +12,7 @@ export default function App() {
     dados: kpis,
     erro,
     carregando
-  } = useApi("kpis.php")
+  } = useApi("KPI.php")
 
   return <div>
     <div className="flex flex-col gap-4 p-6 lg:flex-row">
