@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "/api";
+const API = "/API";
 
 export function useApi(endpoint) {
     const [dados, setDados] = useState(null);

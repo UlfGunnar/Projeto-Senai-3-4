@@ -13,7 +13,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: FTP Deploy
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build do dashboard
+        working-directory: Salao_Jucelda/dashboard_jucelda
+        run: |
+          npm ci
+          npm run build
+
+      # O que a tropinha está fazendo
+      - name: FTP Deploy (site e API)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -21,3 +33,19 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./Salao_Jucelda/
           server-dir: domains/pedrolucasrodrigues.com.br/public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/config.php
+            dashboard_jucelda/**
+
+      # 2) O Dashboard aurudo do Goat Ulf Gunnar :)
+      - name: FTP Deploy (dashboard)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./Salao_Jucelda/dashboard_jucelda/dist/
+          server-dir: domains/pedrolucasrodrigues.com.br/public_html/dashboard_jucelda/

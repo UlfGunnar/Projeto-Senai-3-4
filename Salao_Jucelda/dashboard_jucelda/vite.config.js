@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/dashboard_jucelda/',
   server: {
     proxy: {
-      '/Salao_Jucelda/API': {
+      '/API': {
         target: 'https://pedrolucasrodrigues.com.br',
         changeOrigin: true
       }
