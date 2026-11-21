@@ -6,7 +6,7 @@ export default function KpiLucro({valor = 0}) {
         </p>
     </div>
     <p className="mt-2 text-2xl font-bold text-green-600">
-        ${valor.toLocaleString("pt-BR", {
+        {valor.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL"
           })}

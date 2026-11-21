@@ -1,57 +1,20 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { useApi } from "./../useAPI"
 
-const dados = [
-  {
-    "mes": "Jan",
-    "quantidade_clientes": 120
-  },
-  {
-    "mes": "Fev",
-    "quantidade_clientes": 150
-  },
-  {
-    "mes": "Mar",
-    "quantidade_clientes": 135
-  },
-  {
-    "mes": "Abr",
-    "quantidade_clientes": 180
-  },
-  {
-    "mes": "Mai",
-    "quantidade_clientes": 165
-  },
-  {
-    "mes": "Jun",
-    "quantidade_clientes": 200
-  },
-  {
-    "mes": "Jul",
-    "quantidade_clientes": 190
-  },
-  {
-    "mes": "Ago",
-    "quantidade_clientes": 220
-  },
-  {
-    "mes": "Set",
-    "quantidade_clientes": 175
-  },
-  {
-    "mes": "Out",
-    "quantidade_clientes": 210
-  },
-  {
-    "mes": "Nov",
-    "quantidade_clientes": 195
-  },
-  {
-    "mes": "Dez",
-    "quantidade_clientes": 250
-  }
-]
+const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+
+function rotuloMes(anoMes) {
+  const [ano, mes] = anoMes.split("-"); //separa o ano e mes pelo "-"
+  return `${meses[Number(mes) - 1]}/${ano.slice(2)}`; //conver o mês númerico para o descritivo
+}
 
 export default function GraficoDoisEixos() {
+  const {dados, erro, carregando} = useApi("Cliente_atendidos.php");
+
+  if (carregando) return <p>Carregando...</p>;
+  if (erro) return <p>Erro: {erro}</p>;
+  if (!dados || dados.length === 0) return <p>Sem dados para exibir.</p>;
+
   return (
     <div className="h-72 w-full rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
       <h2>Gráfico de cliente atendidos por mês</h2>
@@ -59,19 +22,21 @@ export default function GraficoDoisEixos() {
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={dados}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="mes" />
+          {/* Eixo X */}
+          <XAxis dataKey="mes" tickFormatter={rotuloMes} stroke="#747474" tick= {
+            {
+              fill: "#747474",
+              fontSize: 12
+            }
+          }/>
 
           {/* Eixo Y*/}
-          <YAxis yAxisId="eixoY" stroke="#747474" />
+          <YAxis stroke="#747474" allowDecimals={false}/>
 
-          {/* Eixo X */}
-          <XAxis dataKey="mes" stroke="#747474" tick={{ fill: "#747474", fontSize: 12 }} />
-
-          <Tooltip />
+          <Tooltip labelFormatter={rotuloMes}/>
           <Legend />
 
           <Line
-            yAxisId="eixoY"
             type="monotone"
             dataKey="quantidade_clientes"
             name="Clientes atendidos"
