@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS despesa (
     tipo_despesa ENUM('DF', 'DR', 'DP') NOT NULL,
     pago BOOLEAN,
     fk_produto INT,
-    valor_produto DECIMAL(10,2),
+    valor_despesa DECIMAL(10,2), --mudei o nome de valor_produto para valor_despesa para ser mais didático
     categoria VARCHAR(15),
     data_inicio DATE,
     data_fim DATE,

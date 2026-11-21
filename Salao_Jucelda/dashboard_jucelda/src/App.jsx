@@ -29,10 +29,10 @@ export default function App() {
             <KPI_receita_bruta valor={kpis.Receita_bruta}/>
 
             {/* KPI do valor das despesas */}
-            <KPI_despesas />
+            <KPI_despesas valor={kpis.Valor_despesa}/>
 
             {/* KPI do valor de lucro */}
-            <KPI_lucro />
+            <KPI_lucro valor={kpis.Valor_lucro}/>
           </>
         )}
         

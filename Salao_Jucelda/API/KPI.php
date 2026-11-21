@@ -15,11 +15,17 @@
                                         From servico_agendamento as sa
                                       Inner Join servico as s on sa.fk_servico = pk_servico
                                       Inner Join agendamento as a on sa.fk_agendamento = a.pk_agendamento
-                                      Where a.status = 'Concluido';")->fetchColumn();               
+                                      Where a.status = 'Concluido';")->fetchColumn(); 
+                                      
+        $valorDespesa = $pdo->query ("Select
+	                                    Sum(valor_produto) as Total_receber
+                                     From despesa;")->fetchColumn();
 
         echo json_encode([
             'Valor_receber' => (float) $valorReceber,
-            'Receita_bruta'  => (float) $ReceitaBruta
+            'Receita_bruta' => (float) $ReceitaBruta,
+            'Valor_despesa' => (float) $valorDespesa,
+            'Valor_lucro'   => (float) $ReceitaBruta - $valorDespesa
         ]);
 
     } catch (PDOException $e) {

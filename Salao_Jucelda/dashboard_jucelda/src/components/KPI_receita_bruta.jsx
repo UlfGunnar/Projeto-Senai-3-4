@@ -6,7 +6,10 @@ export default function KpiReceitabruta({valor = 0}) {
         </p>
     </div>
     <p className="mt-2 text-2xl font-bold text-green-600">
-        ${valor}
+        ${valor.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+          })}
     </p>
   </div>;
 }
