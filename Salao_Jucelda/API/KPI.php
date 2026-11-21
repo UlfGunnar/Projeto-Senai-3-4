@@ -18,7 +18,7 @@
                                       Where a.status = 'Concluido';")->fetchColumn(); 
                                       
         $valorDespesa = $pdo->query ("Select
-	                                    Sum(valor_produto) as Total_receber
+	                                    Sum(valor_despesa) as Total_receber
                                      From despesa;")->fetchColumn();
 
         echo json_encode([
