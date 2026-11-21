@@ -5,14 +5,14 @@ import KPI_lucro          from "./components/KPI_lucro";
 import Grafico_linha      from "./components/Linha_clientes_atendidos"
 import Grafico_barra      from "./components/Barra_pagamento"
 import Grafico_pizza      from "./components/Pizza_Servico"
-import { useAPI }         from "./useAPI"
+import { useApi }         from "./useAPI"
 
 export default function App() {
   const {
     dados: kpis,
     erro,
     carregando
-  } = useAPI("kpis.php")
+  } = useApi("kpis.php")
 
   return <div>
     <div className="flex flex-col gap-4 p-6 lg:flex-row">
