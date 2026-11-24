@@ -1,18 +1,21 @@
 - Create:
 
-    1 - Coletar os dados do FrontEnd (Lucas);
+    1 - Coletar os dados do FrontEnd (Lucas); (Corrigir verificando o que pegar nos dados de acordo com a lista.php)
 
-    2 - Aplicar o tratamento de dados em cada atributo;
+    2 - Aplicar o tratamento de dados em cada atributo, pegará cada variável e verificar como ele não pode vir, vai colocar cada atributo 
+    em uma função em ifs em sequência verificando as regras da documentação e o que for senso comum. Então a variável do tratamento vai
+    ser true de começo, se passar em um if ele retorna false;
 
-    3 - Criar o Objeto para o DAO (Pedro).
+    3 - Se todos os atributos estiverem como true (sem nenhum problema), você vai encapsular os dados na classe e chamar a função de DAO do
+    Pedro para salvar.
 
 - Read:
 
-    1 - Coletar os dados do DAO;
+    1 - Chamar a função de SELECT do Peido;
 
-    2 - Tratar os dados, (Concatenar, calcular campos derivados, etc...);
+    2 - Tratar os dados que for necessário, Concatenar, colocar algum caracter, etc...;
 
-    3- Enviar para o FrontEnd (Lucas)
+    3- Fazer um For Each no .html do Lucas para mostrar os dados do SELECT.
 
 - Update:
 
