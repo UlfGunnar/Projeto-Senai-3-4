@@ -32,14 +32,15 @@
 
     - Listagens (tropinha): 
         * Lista de espera de clientes, com aviso quando liberar algum espaço.
-        * Lista de aniversáriantes;
+        OK * Lista de aniversáriantes; 
+        
         * Cobranças;
-            + O valor total de valor devendo e valor pago de cada divida;
-            + Exibir valor que o cliente está devendo;
-            + Eibir quantas vezes o cliente desmarcou a consulta;
-            + Exibir a quantia de vezes que foi atendia no mês
-        * Listagem de clentes cadastrados;
-        * Listagem de agendamentos;
+            OK + O valor total de valor devendo e valor pago de cada divida;
+            OK + Exibir valor que o cliente está devendo;
+            OK + Eibir quantas vezes o cliente desmarcou a consulta;
+            OK + Exibir a quantia de vezes que foi atendia no mês
+            OK* Listagem de clentes cadastrados;
+            OK* Listagem de agendamentos;
             + Exibi apenas se tiver nos próximos 30 dias;
                 > Envia um lembrete
         * Seção pessoal para mostrar fotos do serviço de cada cliente;

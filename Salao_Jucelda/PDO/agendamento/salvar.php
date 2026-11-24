@@ -1,7 +1,7 @@
 <?php
 
 require_once '../API/conexao.php';
-function salvarDAO(PDO $pdo, array $dados): bool
+function salvarAgendamentoDAO(PDO $pdo, array $dados): bool
 {
     $sql = "INSERT INTO agendamento (
                 data_marcada,
