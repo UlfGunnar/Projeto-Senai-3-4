@@ -6,15 +6,28 @@ import Grafico_linha      from "./components/Linha_clientes_atendidos"
 import Grafico_barra      from "./components/Barra_pagamento"
 import Grafico_pizza      from "./components/Pizza_Servico"
 import { useApi }         from "./useAPI"
+import { useState } from "react";
 
 export default function App() {
-  const {
-    dados: kpis,
-    erro,
-    carregando
-  } = useApi("KPI.php")
+  const {dados: kpis, erro, carregando} = useApi("KPI.php")
+
+  const [ano, setAno] = useState("")
+
+  const query = ano ? `ano=?${ano}` : ""
+
+  const ANOS = [2023, 2024, 2025, 2026]
 
   return <div>
+    <div className="flex items-center gap-2 px-6 pt-6">
+      <label htmlFor="ano">Ano: </label>
+      <select id="ano" value={ano} onChange={(e) => setAno(e.target.value)} className="border rounded px-2 py-1">
+        <option value="">Todos</option>
+        {ANOS.map((a) => (
+          <option key={a} value={a}>{a}</option>
+        ))}
+      </select>
+    </div>
+
     <div className="flex flex-col gap-4 p-6 lg:flex-row">
       <div className="flex flex-col gap-4 lg:w-64">
         {carregando && <p>Carregando KPIs...</p>}
