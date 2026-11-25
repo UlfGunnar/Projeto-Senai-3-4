@@ -1,5 +1,5 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { useAPI } from "./../useAPI"
+import { useApi } from "./../useAPI"
 
 const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
@@ -9,7 +9,7 @@ function rotuloMes(anoMes) {
 }
 
 export default function GraficoBarras() {
-  const {dados, erro, carregando} = useAPI("Receita_bruta_mensal.php");
+  const {dados, erro, carregando} = useApi("Receita_bruta_mensal.php");
 
   if (carregando) return <p>Carregando...</p>;
   if (erri) return <p>Erro: {erro}</p>;
