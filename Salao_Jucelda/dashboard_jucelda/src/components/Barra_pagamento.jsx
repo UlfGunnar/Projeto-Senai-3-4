@@ -9,7 +9,7 @@ function rotuloMes(anoMes) {
 }
 
 export default function GraficoBarras() {
-  const {dados, erro, carregando} = useApi("Receita_bruta_mensal.php");
+  const {dados, erro, carregando} = useAPI("Receita_bruta_mensal.php");
 
   if (carregando) return <p>Carregando...</p>;
   if (erri) return <p>Erro: {erro}</p>;
