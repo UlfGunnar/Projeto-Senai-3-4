@@ -12,19 +12,19 @@ export default function GraficoBarras() {
   const {dados, erro, carregando} = useApi("Receita_bruta_mensal.php");
 
   if (carregando) return <p>Carregando...</p>;
-  if (erri) return <p>Erro: {erro}</p>;
+  if (erro) return <p>Erro: {erro}</p>;
   if (!dados || dados.length === 0) return <p>Sem dados para exibir.</p>
 
     return (
-        <div className="h-72 w-full rounded-xl border border-gray-200 bg-white p04 shadow-sm">
+        <div className="h-72 w-full rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
             <h2>Gráfico da Receita Bruta por mês</h2>
             
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={dados}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
-                    <XAxis dataKey="mes_ano" />
+                    <XAxis dataKey="mes_ano" tickFormatter={rotuloMes}/>
                     <YAxis/>
-                    <Tooltip/>
+                    <Tooltip tickFormatter={rotuloMes}/>
                     <Legend/>
 
                     <Bar dataKey="total_receita_bruta" name="Receita Bruta" fill="#13c749" radius={[4, 4, 0,0]}/>
