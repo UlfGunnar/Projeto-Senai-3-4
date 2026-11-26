@@ -4,12 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './',
-  build: {
-    rollupOptions: {
-      input: 'index_dash.html',
-    },
-  },
+  base: '/dashboard_jucelda/',
   server: {
     proxy: {
       '/API': {
