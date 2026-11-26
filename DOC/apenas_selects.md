@@ -124,3 +124,29 @@ INNER JOIN servico AS s
     on a.fk_servico = s.pk_servico;
 
 ------------------------------------
+
+Listar produtos
+
+SELECT
+
+    nome_produto,
+    preco,
+    quantidade
+
+FROM produtos
+ORDER BY pk_produto
+
+------------------------------------
+
+Listar servicos
+
+SELECT
+
+    nome_servico,
+    tempo,
+    valor_servico
+
+FROM servico
+
+------------------------------------
+
