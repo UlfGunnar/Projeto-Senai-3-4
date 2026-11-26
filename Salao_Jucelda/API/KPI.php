@@ -11,7 +11,7 @@
     }
 
     $filtroAgendamento = $ano ? "AND YEAR(a.data_marcada) = ?" : "";
-    $filtroDespesa     = $ano ? "WHERE YEAR(data_marcada) = ?" : "";
+    $filtroDespesa     = $ano ? "WHERE YEAR(data_inicio) = ?" : "";
 
     try {
         $valorReceber = total($pdo, "
