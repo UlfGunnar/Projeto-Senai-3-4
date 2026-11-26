@@ -9,11 +9,12 @@ import { useApi }         from "./useAPI"
 import { useState } from "react";
 
 export default function App() {
-  const query = ano ? `ano=?${ano}` : ""
+  const [ano, setAno] = useState("")
+
+  const query = ano ? `?ano=${ano}` : ""
 
   const {dados: kpis, erro, carregando} = useApi(`KPI.php${query}`)
 
-  const [ano, setAno] = useState("")
 
   const ANOS = [2023, 2024, 2025, 2026]
 
