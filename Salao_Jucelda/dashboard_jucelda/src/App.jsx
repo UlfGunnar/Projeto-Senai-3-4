@@ -20,6 +20,11 @@ export default function App() {
 
   return <div>
     <div className="flex items-center gap-2 px-6 pt-6">
+      <a href="../../FrontEnd/html/home.html" className="group inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-slate-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 active:scale-95">
+        <span className="transition-transform group-hover:-translate-x-1">←</span>
+        Voltar
+      </a>
+
       <label htmlFor="ano">Ano: </label>
       <select id="ano" value={ano} onChange={(e) => setAno(e.target.value)} className="border rounded px-2 py-1">
         <option value="">Todos</option>
