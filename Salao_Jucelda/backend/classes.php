@@ -14,7 +14,7 @@ class cliente {
     public string $nome_cliente; #i
     public string $celular_cliente; #i
     public string $cpf; #i
-    public DateTime $data_nascimento; #i
+    public DateTime $data_nascimento; #i #pegar só a data
 }
 
 class credito_cliente {
@@ -26,7 +26,7 @@ class credito_cliente {
 class servico {
     public int $pk_servico; #i
     public string $nome_servico; #i
-    public DateTime $tempo; #i
+    public DateTime $tempo; #i #pegar só o horário
     public float $valor_servico; #i
 }
 
@@ -49,28 +49,28 @@ class funcionario {
     public string $cpf_funcionario; #i
     public string $numero_celular; #i
     public string $nome_funcionario; #i
-    public DateTime $data_nascimento; #i
+    public DateTime $data_nascimento; #i #pegar só a data
 }
 
 class agendamento {
     public int $pk_agendamento; #i
-    public DateTime $data_marcada; #i
+    public DateTime $data_marcada; #i #pegar só a data
     public int $fk_cliente; #i
     public int $fk_servico; #i
     public string $pagamento; #i
     public string $observacao; #i
     public string $status; #i
-    public DateTime $hora_marcada; #
+    public DateTime $hora_marcada; # #pegar só o horário
     public int $fk_funcionario; #i
 }
 class cobranca {
     public int $pk_cobranca; #i
     public int $fk_cliente; #i
     public int $fk_servico; #i
-    public DateTime $data_inicio; #i 
-    public DateTime $data_fim; #i
-    public DateTime $hora_inicio; #i
-    public DateTime $hora_fim; #i
+    public DateTime $data_inicio; #i #pegar só a data
+    public DateTime $data_fim; #i #pegar só a data
+    public DateTime $hora_inicio; #i #pegar só a hora
+    public DateTime $hora_fim; #i #pegar só a hora
     public float $saldo_devedor; #i
     public string $observacao; #i
     public string $status; #i
@@ -84,8 +84,8 @@ class despesa {
     public int $fk_produto; #i
     public float $valor_produto; #i
     public string $categoria; #i
-    public DateTime $data_inicio; #i
-    public DateTime $data_fim; #i
+    public DateTime $data_inicio; #i #pegar só a data
+    public DateTime $data_fim; #i #pegar só a data
 }
 
 class servico_agendamento {

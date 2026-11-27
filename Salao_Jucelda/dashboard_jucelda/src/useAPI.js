@@ -10,7 +10,7 @@ export function useApi(endpoint) {
         fetch(`${API}/${endpoint}`).then((res) => {
             if (!res.ok) throw new Error(`Erro ${res.status}`);
             return res.json();
-        }).then(setDados).catch((e) => (e.message));
+        }).then(setDados).catch((e) => setErro(e.message));
     }, [endpoint]);
 
     return {

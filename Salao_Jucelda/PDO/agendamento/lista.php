@@ -30,4 +30,4 @@ function listarDAO(PDO $pdo): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-?>
+?>' '
