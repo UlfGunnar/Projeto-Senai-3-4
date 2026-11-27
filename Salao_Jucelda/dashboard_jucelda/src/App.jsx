@@ -29,7 +29,7 @@ export default function App() {
       <select id="ano" value={ano} onChange={(e) => setAno(e.target.value)} className="border rounded px-2 py-1">
         <option value="">Todos</option>
         {ANOS.map((a) => (
-          <option key={a} value={a}>{a}</option>
+          <option key={a} value={a}>{a}</option>  
         ))}
       </select>
     </div>
