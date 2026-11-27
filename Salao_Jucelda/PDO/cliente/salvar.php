@@ -1,6 +1,7 @@
 <?php
 
 require_once '../API/conexao.php';
+
 function salvarClienteDAO(PDO $pdo, array $dados): bool
 {
     $sql = "INSERT INTO cliente (
