@@ -8,11 +8,10 @@ function salvarDespesaDAO(PDO $pdo, array $dados): bool
                 pago,
                 fk_produto,
                 valor_despesa,
-                categoria,
                 data_inicio,
                 data_fim,
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $pdo->prepare($sql);
 
@@ -21,7 +20,6 @@ function salvarDespesaDAO(PDO $pdo, array $dados): bool
         $dados['pago'],
         $dados['fk_produto'],
         $dados['valor_despesa'],
-        $dados['categoria'],
         $dados['data_inicio'],
         $dados['data_fim']
     ]);

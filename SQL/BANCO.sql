@@ -14,7 +14,7 @@ DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS cliente (
 	pk_cliente INT AUTO_INCREMENT PRIMARY KEY,
-    fk_anamnese INT, -- Tirei o NOT NULL, nem todo cliente teria algum problema capilar
+    fk_anamnese INT, 
     nome_cliente VARCHAR(150) NOT NULL,
     celular_cliente CHAR(11),
     cpf CHAR(11),
@@ -104,13 +104,12 @@ DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS despesa (
 	pk_despesa INT AUTO_INCREMENT PRIMARY KEY,
-    tipo_despesa ENUM('DF', 'DR', 'DP') NOT NULL,
-    pago BOOLEAN,
-    fk_produto INT,
-    valor_despesa DECIMAL(10,2), --mudei o nome de valor_produto para valor_despesa para ser mais didático
-    categoria VARCHAR(15),
-    data_inicio DATE,
-    data_fim DATE,
+    tipo_despesa ENUM('DF', 'DR', 'DP') NOT NULL, --DF = Despesa Fixa, DR = Despesa Regular, DP = Despesa Parcelada
+    pago BOOLEAN DEFAULT FALSE NOT NULL,
+    fk_produto INT NOT NULL,
+    valor_despesa DECIMAL(10,2) NOT NULL, 
+    data_criacao DATE NOT NULL,
+    data_pagamento DATE NOT NULL,
     
     FOREIGN KEY (fk_produto) REFERENCES produtos (pk_produto)
 )
